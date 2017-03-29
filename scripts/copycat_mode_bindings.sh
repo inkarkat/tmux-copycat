@@ -21,7 +21,7 @@ extend_key() {
 
 copycat_cancel_bindings() {
 	# keys that quit copy mode are enhanced to quit copycat mode as well.
-	local cancel_mode_bindings=$(copycat_quit_copy_mode_keys)
+	local cancel_mode_bindings=$(copycat_quit_copy_mode_keys copycat_mode_quit.sh)
 	local key
 	for key in $cancel_mode_bindings; do
 		extend_key "$key" "$CURRENT_DIR/copycat_mode_quit.sh"
