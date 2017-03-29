@@ -5,7 +5,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/helpers.sh"
 
 unbind_cancel_bindings() {
-	local cancel_mode_bindings=$(copycat_quit_copy_mode_keys)
+	local cancel_mode_bindings=$(copycat_quit_copy_mode_keys copycat_mode_quit.sh)
 	local key
 	for key in $cancel_mode_bindings; do
 		tmux unbind-key -n "$key"

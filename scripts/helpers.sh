@@ -153,7 +153,8 @@ copycat_quit_copy_mode_keys() {
 	local commands_that_quit_copy_mode="cancel\|copy-selection\|copy-pipe"
 	local copy_mode="$(tmux_copy_mode)-copy"
 	tmux list-keys -t "$copy_mode" |
-		\grep "$commands_that_quit_copy_mode" |
+		grep "$commands_that_quit_copy_mode" |
+		grep -v "$1" |
 		$AWK_CMD '{ print $4}' |
 		sort -u |
 		sed 's/C-j//g' |
