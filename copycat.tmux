@@ -18,7 +18,7 @@ set_default_stored_searches() {
 		tmux set-option -g "${COPYCAT_VAR_PREFIX}_${url_search}" "(https?://|git@|git://|ssh://|ftp://|file:///)[[:alnum:]?=%/_.:,;~@!#$&()*+-]*"
 	fi
 	if stored_search_not_defined "$file_search"; then
-		tmux set-option -g "${COPYCAT_VAR_PREFIX}_${file_search}" "(^|^\.|[[:space:]]|[[:space:]]\.|[[:space:]]\.\.|^\.\.)[[:alnum:]~_-]*/[][[:alnum:]_.#$%&+=/@-]*"
+		tmux set-option -g "${COPYCAT_VAR_PREFIX}_${file_search}" '/(^|\s)\K(\.{0,2})[[:alnum:]~_-]*/[][[:alnum:]_.#$%&+=/@-]*/'
 	fi
 	if stored_search_not_defined "$digit_search"; then
 		tmux set-option -g "${COPYCAT_VAR_PREFIX}_${digit_search}" "[[:digit:]]+"
