@@ -17,7 +17,12 @@ reverse_and_create_copycat_file() {
 	local file=$1
 	local copycat_file=$2
 	local grep_pattern=$3
-	(tac 2>/dev/null || tail -r) < "$file" | grep -oniE "$grep_pattern" > "$copycat_file"
+	case "$grep_pattern" in
+		/*/)	local regexp_dialect=P
+			grep_pattern="${grep_pattern:1:-1}";;
+		*)	local regexp_dialect=E;;
+	esac
+	(tac 2>/dev/null || tail -r) < "$file" | grep -oni$regexp_dialect "$grep_pattern" > "$copycat_file"
 }
 
 delete_old_files() {
