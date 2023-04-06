@@ -9,6 +9,9 @@ tmux_option_prev="@copycat_prev"
 # keeps track of number of panes in copycat mode
 tmux_option_counter="@copycat_counter"
 
+tmux_option_on_copycat_mode_start='@copycat_on_mode_start'
+tmux_option_on_copycat_mode_quit='@copycat_on_mode_quit'
+
 # === awk vs gawk ===
 command_exists() {
 	command -v "$@" > /dev/null 2>&1
