@@ -7,7 +7,9 @@ loading the tmux-copycat plugin.
 Other options:
 
 - `@copycat_search` (default `/`) defines the key-binding used (after prefix) to
-  start an interactive search.
+  start an interactive search. Also supports key combinations (and dropping the
+  prefix) by prefixing the key with `-Tkey-table` (only in this one-argument
+  form).
 - `@copycat_next` (default `n`) defines the key (without prefix) used to jump to
   next search result.
 - `@copycat_prev` (default `N`) defines the key (without prefix) used to jump to

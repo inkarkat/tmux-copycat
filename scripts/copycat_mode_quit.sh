@@ -29,6 +29,7 @@ main() {
 		reset_copycat_position
 		unset_copycat_mode
 		copycat_decrease_counter
+		eval "$(get_tmux_option "$tmux_option_on_copycat_mode_quit" '')"
 	fi
 }
 main

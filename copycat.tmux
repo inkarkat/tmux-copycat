@@ -47,9 +47,14 @@ set_start_bindings() {
 set_copycat_search_binding() {
 	local key_bindings
 	read -r -d '' -a key_bindings <<<"$(get_tmux_option "$copycat_search_option" "$default_copycat_search_key")"
-	local key
+	local key table=
 	for key in "${key_bindings[@]}"; do
-		tmux bind-key "$key" run-shell "$CURRENT_DIR/scripts/copycat_search.sh"
+		if [[ "$key" =~ ^-T ]]; then
+			table="$key"
+			continue
+		fi
+		tmux bind-key ${table:+"$table"} "$key" run-shell "$CURRENT_DIR/scripts/copycat_search.sh"
+		table=''
 	done
 }
 
