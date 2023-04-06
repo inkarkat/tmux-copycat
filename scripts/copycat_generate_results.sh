@@ -41,7 +41,7 @@ if_no_results_exit_with_message() {
 	# check for empty filename
 	if ! [ -s "$copycat_filename" ]; then
 		display_message "No results!"
-		exit 0
+		exit 1
 	fi
 }
 

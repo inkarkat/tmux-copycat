@@ -13,7 +13,7 @@ supported_tmux_version_ok() {
 main() {
 	local pattern="$1"
 	if supported_tmux_version_ok; then
-		$CURRENT_DIR/copycat_generate_results.sh "$pattern" # will `exit 0` if no results
+		$CURRENT_DIR/copycat_generate_results.sh "$pattern" || return 0 # will `exit 1` if no results
 		$CURRENT_DIR/copycat_jump.sh 'next'
 	fi
 }
