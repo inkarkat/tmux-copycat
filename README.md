@@ -1,6 +1,6 @@
 # Tmux copycat
 
-[![Build Status](https://travis-ci.org/tmux-plugins/tmux-copycat.svg?branch=master)](https://travis-ci.org/tmux-plugins/tmux-copycat)
+This is a fork of [Bruno Sutic's original tmux-copycat](https://github.com/tmux-plugins/tmux-copycat) with fixes and additional features.
 
 **NOTE: [tmux 3.1 adds support for native regex searches](https://raw.githubusercontent.com/tmux/tmux/3.1/CHANGES).
 This is great news because it means a big part of 'tmux-copycat' is now
@@ -16,8 +16,8 @@ Predefined searches are plugin killer feature. It speeds the workflow and
 reduces mouse usage with Tmux.
 
 It works even better when paired with
-[tmux yank](https://github.com/tmux-plugins/tmux-yank). Tested and working on
-Linux, OSX and Cygwin.
+[tmux yank](https://github.com/tmux-plugins/tmux-yank).
+Tested and working on Linux.
 
 ### Screencast
 

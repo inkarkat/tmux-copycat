@@ -1,6 +1,20 @@
 # Changelog
 
-### master
+## NEW_VERSION - RELEASEME
+### Added
+- ENH: Allow starting copycat search via a key combination (or no prefix)
+- ENH: Allow hooking into copycat start and quit via new `@copycat_on_mode_{start,quit}` options
+- ENH: Support PCRE regexp pattern with /.../ syntax
+### Changed
+### Deprecated
+### Experimental
+### Removed
+### Fixed
+- FIX: No abort when no matches
+- FIX: Handle custom copy mode mappings by letting them integrate with copycat on their own
+- Use PCRE-type regexp to match file names without the leading whitespace
+- BUG: In copy mode, subsequent searches ignore the entered pattern and repeat the first search
+### Security
 
 ### v3.0.0, Nov 01, 2017
 - if installed use `gawk` instead of `awk` (@metcalfc)
